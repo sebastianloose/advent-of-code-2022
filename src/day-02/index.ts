@@ -19,12 +19,8 @@ const drawCombinations = [{ p: 'X', o: 'A' }, { p: 'Y', o: 'B' }, { p: 'Z', o: '
 const itemPoints = { X: 1, Y: 2, Z: 3 };
 
 const gameResult = ({ p, o }: Game) => {
-    if (winningCombinations.find(e => e.p == p && e.o == o)) {
-        return 6;
-    }
-    if (loosingCombinations.find(e => e.p == p && e.o == o)) {
-        return 0;
-    }
+    if (winningCombinations.find(e => e.p == p && e.o == o)) return 6;
+    if (loosingCombinations.find(e => e.p == p && e.o == o)) return 0;
     return 3;
 };
 
